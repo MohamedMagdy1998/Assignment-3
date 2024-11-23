@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="CRUD" />
+    <link rel="shortcut icon" href="images/header.jpeg" />
+    <title>CRUD Assignment</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.min.css"
+    />
+    <link rel="stylesheet" href="css style/all.min.css" />
+    <link rel="stylesheet" href="css style/bootstrap.min.css" />
+    <link rel="stylesheet" href="css style/main.css" />
+  </head>
+
+  <body>
+    <div class="headings">
+      <div
+        class="firstHeading d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1 class="h3 py-2 position-relative" id="pageHead">Bookmarker</h1>
+        <hr />
+      </div>
+    </div>
+
+    <div class="formPage">
+      <div class="container d-flex flex-column justify-content-center">
+        <h2 class="my-5 text-center">
+          <i class="fa-solid text-success fa-bookmark"></i>
+          Bookmark your favorite sites
+          <i class="fa-solid fa-bookmark"></i>
+        </h2>
+
+        <div
+          class="site-name w-100 d-flex flex-column justify-content-center mb-3"
+        >
+          <label for="bookmarkName" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-book-bookmark pe-2"></i>
+            Site Name</label
+          >
+          <input
+            oninput="validateForm(this)"
+            type="text"
+            placeholder="Bookmark Name"
+            class="form-control"
+            id="bookmarkName"
+          />
+        </div>
+
+        <div
+          class="site-url w-100 d-flex flex-column justify-content-center mb-3"
+        >
+          <label for="bookmarkURL" class="pb-2 fw-semibold">
+            <i class="fa-solid fa-link pe-2"></i>Site URL</label
+          >
+          <input
+            oninput="validateForm(this)"
+            type="url"
+            placeholder="Website URL"
+            class="form-control"
+            id="bookmarkURL"
+          />
+          <div class="alert alert-danger d-none">
+            <p>1. Start with the Scheme/Protocol</p>
+            <p>2. Include a Valid Domain Name</p>
+            <p>3. Use Optional Subdomains (If Necessary)</p>
+            <p>4. Avoid Spaces or Unsupported Characters</p>
+            <p>5. Ensure URL Encoding</p>
+          </div>
+
+        </div>
+
+        <button
+          onclick="addSite()"
+          class="mx-auto bg-danger text-white btn btn-submit px-5"
+          id="submitBtn"
+        >
+          Submit
+        </button>
+        <hr class="w-100" />
+      </div>
+    </div>
+
+    <div class="rowData">
+      <table class="table container text-center">
+        <thead>
+          <tr>
+            <th>Index</th>
+            <th>Website Name</th>
+            <th>Visit</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+
+        <tbody id="info"></tbody>
+      </table>
+    </div>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.14.5/dist/sweetalert2.all.min.js"></script>
+
+    <script src="js/index.js"></script>
+  </body>
+</html>
